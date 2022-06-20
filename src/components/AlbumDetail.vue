@@ -76,7 +76,7 @@
     methods: {
       async getAlbumDetail() {
         const albumId = this.$route.params.id;
-        console.log(albumId);
+        // console.log(albumId);
         const { data } = await getAlbum(albumId);
         this.albuminfo = data.album;
         this.albumsongs = data.songs;
