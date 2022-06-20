@@ -67,12 +67,17 @@
       },
     },
     created() {
-      const albumId = this.$route.params.id;
-      this.getAlbumDetail(albumId);
+      this.getAlbumDetail();
+    },
+    //监视路由(参数)变化刷新页面。
+    watch: {
+      $route: "getAlbumDetail",
     },
     methods: {
-      async getAlbumDetail(id) {
-        const { data } = await getAlbum(id);
+      async getAlbumDetail() {
+        const albumId = this.$route.params.id;
+        console.log(albumId);
+        const { data } = await getAlbum(albumId);
         this.albuminfo = data.album;
         this.albumsongs = data.songs;
       },
