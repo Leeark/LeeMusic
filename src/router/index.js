@@ -23,31 +23,49 @@ const routes = [
     component: DisCover,
     name: "Discover",
     redirect: "/discover/homerec",
+    meta: {
+      title: "Home",
+    },
     children: [
       {
         path: "homerec",
         name: "Homerec",
         component: HomeRec,
+        meta: {
+          title: "Homerec",
+        },
       },
       {
         path: "recsonglist",
         name: "Recsonglist",
         component: RecsongList,
+        meta: {
+          title: "Recsong",
+        },
       },
       {
         path: "songrank",
         name: "Songrank",
         component: SongRank,
+        meta: {
+          title: "Songrank",
+        },
       },
       {
         path: "singerselect",
         name: "Singerselect",
         component: SingerSelect,
+        meta: {
+          title: "Singers",
+        },
       },
       {
         path: "latestsongs",
         name: "Latestsongs",
         component: LatestSongs,
+        meta: {
+          title: "Latest",
+        },
       },
     ],
   },
@@ -55,16 +73,25 @@ const routes = [
     path: "/recvideo",
     component: RecVideo,
     name: "Recvideo",
+    meta: {
+      title: "Recvideo",
+    },
   },
   {
     path: "/playlist/:id",
     name: "Playlist",
     component: PlayList,
+    meta: {
+      title: "Playlist",
+    },
   },
   {
     path: "/album/:id",
     name: "AlbumDetail",
     component: AlbumDetail,
+    meta: {
+      title: "Album",
+    },
   },
 ];
 
@@ -73,4 +100,8 @@ const router = new VueRouter({
   routes,
 });
 
+router.beforeEach((to, from, next) => {
+  document.title = `${to.meta.title} | LeeMusic`;
+  next();
+});
 export default router;
