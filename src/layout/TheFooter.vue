@@ -290,7 +290,7 @@
             this.$store.dispatch("saveSongUrl", song.id);
             // 把当前歌曲的信息保存在store里。
             this.$store.commit("SaveSongInfo", song);
-            this.isplay = true;
+            this.$refs.audio.play();
             // console.log(song.id, "检查完毕");
           })
           .catch(() => {
