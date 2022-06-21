@@ -226,6 +226,7 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         overflow: hidden;
+        text-align: start;
       }
       .creator {
         font-size: 18px;
@@ -237,6 +238,7 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         overflow: hidden;
+        text-align: start;
 
         .count {
           font-size: 12px;

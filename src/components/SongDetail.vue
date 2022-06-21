@@ -235,11 +235,12 @@
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 2;
           overflow: hidden;
+          text-align: end;
         }
         .ar-al {
           font-size: 18px;
           margin-top: 3px;
-          margin-right: 3px;
+          // margin-right: 3px;
           font-weight: 300;
           color: rgb(34, 33, 33);
           display: -webkit-box;
@@ -247,6 +248,7 @@
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 2;
           overflow: hidden;
+          text-align: end;
         }
       }
     }

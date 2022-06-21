@@ -258,6 +258,7 @@
           color: var(--base-black);
           font-size: 20px;
           cursor: default;
+          text-align: start;
         }
       }
       .playstate {
