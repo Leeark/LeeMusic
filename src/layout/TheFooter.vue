@@ -22,7 +22,7 @@
         ref="audio"
         @loadedmetadata="onLoadedmetadata"
         @timeupdate="ThrottleGetCurrentTime"
-        @ended="playmodel !== 3 ? loopPlay() : toggleSong(1)"
+        @ended="playmodel == 3 ? loopPlay() : toggleSong(1)"
       ></audio>
       <div class="left-control">
         <div class="song-photo">
