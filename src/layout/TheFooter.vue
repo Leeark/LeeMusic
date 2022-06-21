@@ -22,7 +22,7 @@
         ref="audio"
         @loadedmetadata="onLoadedmetadata"
         @timeupdate="ThrottleGetCurrentTime"
-        @ended="playmodel == 3 ? loopPlay() : toggleSong(1)"
+        @ended="playmodel !== 3 ? loopPlay() : toggleSong(1)"
       ></audio>
       <div class="left-control">
         <div class="song-photo">
@@ -346,7 +346,9 @@
       // 单曲循环
       loopPlay() {
         this.$refs.audio.loop = true;
-        this.isplay = true;
+        // watch监听不到，需要手动切换isplay一下才能单曲循环，直接命令audioplay一下。
+        // this.isplay = true;
+        this.$refs.audio.play();
       },
       // 格式化时间
       formatTime(time) {
