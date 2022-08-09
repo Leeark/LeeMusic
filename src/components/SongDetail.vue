@@ -77,7 +77,7 @@
     mounted() {
       // this.disableScroll();
     },
-    watch: {
+  watch: {
       playingSongInfo: {
         deep: true,
         handler(info) {
